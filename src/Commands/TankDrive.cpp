@@ -16,7 +16,8 @@ void TankDrive::Initialize() {
 // Called repeatedly when this Command is scheduled to run
 
 void TankDrive::Execute() {
-	drive->tankDrive(-oi->getLeftStick()->GetY(), -oi->getRightStick()->GetY());
+	//drive->tankDrive(-oi->getLeftStick()->GetY(), -oi->getRightStick()->GetY());
+	drive->tankDrive(-oi->getXboxController()->GetY(GenericHID::kRightHand), -oi->getXboxController()->GetY(GenericHID::kLeftHand));
 	double average = (drive->leftDistance() + drive->rightDistance()) / 2;
 	//std::cout << drive->getAngle() << std::endl;
 }

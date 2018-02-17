@@ -23,6 +23,8 @@ public:
 
 		// chooser.AddObject("My Auto", new MyAutoCommand());
 		frc::SmartDashboard::PutData("Auto Modes", &chooser);
+
+		CameraServer::GetInstance()->StartAutomaticCapture();
 	}
 
 	/**

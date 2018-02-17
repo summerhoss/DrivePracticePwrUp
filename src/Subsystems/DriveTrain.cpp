@@ -44,8 +44,8 @@ double DriveTrain::Limit(double num, double max) {
 }
 
 void DriveTrain::tankDrive(double leftVal, double rightVal) {
-	left->Set(ControlMode::PercentOutput, DriveTrain::Limit(-leftVal, 0.5));
-	right->Set(ControlMode::PercentOutput, DriveTrain::Limit(-rightVal, 0.5));
+	left->Set(ControlMode::PercentOutput, DriveTrain::Limit(-leftVal, .75));
+	right->Set(ControlMode::PercentOutput, DriveTrain::Limit(-rightVal, .75));
 }
 
 void DriveTrain::arcadeDrive(double moveVal, double rotateVal) {
